@@ -46,3 +46,12 @@ export const TrashCan = styled.div`
     color: red;
   }
 `;
+export const Discount = styled.div`
+  font-size: 1rem;
+  color: green;
+  margin-top: 2rem;
+`;
+export const SubTotal = styled.div`
+  font-size: 1.5rem;
+  font-weight: bold;
+`;
