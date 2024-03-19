@@ -1,0 +1,32 @@
+/* Default styles */
+.menu {
+  display: flex;
+  flex-direction: row; /* Adjust based on your design */
+  transition: all 0.3s ease;
+}
+
+.menu.open {
+  display: flex;
+}
+
+/* Styles when menu is not open */
+@media (max-width: 768px) {
+  /* Adjust breakpoint as needed */
+  .menu {
+    display: none;
+  }
+
+  .menu.open {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  header button {
+    display: block; /* Show burger menu button */
+  }
+}
+
+/* Hide burger menu button on larger screens */
+header button {
+  display: none;
+}
