@@ -13,11 +13,14 @@ const Header = () => {
 
   return (
     <header>
-      <Hamburger onClick={toggleMenu} />
-
+      <button onClick={toggleMenu}>
+        <Hamburger />
+      </button>
       <div className={isOpen ? "menu open" : "menu"}>
         <Nav />
         <SearchField />
+      </div>
+      <div>
         <CartIcon />
       </div>
     </header>
