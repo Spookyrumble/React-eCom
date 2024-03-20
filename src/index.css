@@ -83,10 +83,12 @@ button:focus-visible {
 .menu {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 1rem;
   transition: all 0.3s ease;
   position: fixed;
   top: 0;
+  left: 0;
   margin: auto;
   width: 100%;
 }
