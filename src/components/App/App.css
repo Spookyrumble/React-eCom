@@ -3,3 +3,13 @@
   margin: 0 auto;
   text-align: center;
 }
+
+body {
+  margin: 0;
+  background-image: url("../../assets/4ddafe79-76dc-470a-9579-cd442dfc2325.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: auto;
+}

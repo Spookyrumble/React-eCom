@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const ReturnButton = styled.div`
-  margin: 30px;
-  cursor: pointer;
-`;
-
 export const ReviewContainer = styled.div`
   display: flex;
   flex-direction: column;

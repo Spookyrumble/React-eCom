@@ -3,6 +3,7 @@ import useApiFetch from "../../hooks/useApiFetch";
 import CalculatedPrice from "../Price";
 import StarRating from "../RatingStars";
 import * as S from "./index.styles";
+import { ReturnButton } from "../Global/index.styles";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import useStore from "../../hooks/useStore";
@@ -10,7 +11,17 @@ import useStore from "../../hooks/useStore";
 // eslint-disable-next-line react/prop-types
 const AddToCartBtn = ({ item }) => {
   const addToCart = useStore((state) => state.addToCart);
-  return <button onClick={() => addToCart(item)}>Add to Cart</button>;
+  const cart = useStore((state) => state.cart);
+  // eslint-disable-next-line react/prop-types
+  const isItemInCart = cart.some((cartItem) => cartItem.id === item.id);
+
+  const buttonClassName = isItemInCart ? "addedBtn" : "addBtn";
+
+  return (
+    <button className={buttonClassName} onClick={() => addToCart(item)}>
+      {isItemInCart ? "Add More" : "Add to cart"}
+    </button>
+  );
 };
 
 const DetailedProduct = () => {
@@ -39,9 +50,9 @@ const DetailedProduct = () => {
         />
       </div>
       <AddToCartBtn item={data} />
-      <S.ReturnButton>
+      <ReturnButton>
         <IoArrowBackCircleOutline size={56} onClick={() => navigate(`/`)} />
-      </S.ReturnButton>
+      </ReturnButton>
       {data.reviews.length > 0 && (
         <S.ReviewContainer>
           <h3>Reviews</h3>

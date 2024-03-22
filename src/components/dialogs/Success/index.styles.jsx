@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 export const Dialog = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  z-index: 1000;
+  position: fixed; /* Cover the whole screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 10;
 `;
 
 export const DialogContent = styled.div`
@@ -29,12 +34,12 @@ export const DialogActions = styled.div`
 export const Button = styled.button`
   padding: 10px;
   border: none;
-  background-color: #f0c040;
+  background-color: #646cff;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    background-color: #f0a040;
+    background-color: #535bf2;
   }
 `;

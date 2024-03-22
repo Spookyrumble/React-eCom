@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as S from "./index.styles";
+import DialogSuccess from "../dialogs/Success";
 
 const Form = () => {
   const [fullName, setFullName] = useState("");
@@ -32,6 +33,23 @@ const Form = () => {
       setMessage(value);
     }
   }
+
+  const [isDialogHidden, setDialogHidden] = useState(true);
+  const toggleDialog = (shouldShow) => {
+    setDialogHidden(!shouldShow);
+  };
+
+  const clearForm = () => {
+    setFullName("");
+    setEmail("");
+    setSubject("");
+    setMessage("");
+  };
+
+  const handleSubmit = () => {
+    toggleDialog(true);
+    clearForm();
+  };
 
   return (
     <>
@@ -78,7 +96,14 @@ const Form = () => {
           rows={5}
           onChange={onInputChange}
         />
-        <button type="submit">Submit</button>
+        <DialogSuccess
+          hidden={isDialogHidden}
+          show={toggleDialog}
+          message={"Thank you for contacting us. We will get back to you soon."}
+        />
+        <button type="submit" onClick={handleSubmit} disabled={fullName === ""}>
+          {fullName === "" ? "Please fill out form" : "Submit"}
+        </button>
       </S.FormContainer>
     </>
   );
