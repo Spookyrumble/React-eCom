@@ -38,7 +38,7 @@ const DetailedProduct = () => {
 
   return (
     <>
-      <div>
+      <S.ProductCard>
         <S.ImgContainer>
           <S.Img src={data.image.url} alt={data.image.alt} />
         </S.ImgContainer>
@@ -48,7 +48,7 @@ const DetailedProduct = () => {
           price={data.price}
           discountedPrice={data.discountedPrice}
         />
-      </div>
+      </S.ProductCard>
       <AddToCartBtn item={data} />
       <ReturnButton>
         <IoArrowBackCircleOutline size={56} onClick={() => navigate(`/`)} />

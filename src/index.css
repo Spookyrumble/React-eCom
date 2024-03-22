@@ -37,6 +37,7 @@ header {
     align-items: center;
     margin: 0 10px;
     align-items: center;
+    z-index: 100;
   }
 }
 

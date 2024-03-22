@@ -4,9 +4,17 @@ export const ReviewContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: left;
   padding: 0px;
-  margin: 200px 20px;
+  margin: 100px 20px;
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+`;
+
+export const ProductCard = styled.div`
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  margin: 20px;
+  padding: 20px;
 `;
 
 export const ReviewCard = styled.div`
