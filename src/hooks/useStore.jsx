@@ -35,6 +35,7 @@ const useStore = create(
             return acc;
           }, []),
         })),
+      clearCart: () => set(() => ({ cart: [] })),
     }),
     {
       name: "shopping-cart",
@@ -48,7 +49,19 @@ const useStore = create(
         removeItem: (name) => localStorage.removeItem(name),
       },
     }
-  )
+  ),
+  {
+    name: "shopping-cart",
+    storage: {
+      getItem: (name) => {
+        const item = localStorage.getItem(name);
+        return item ? JSON.parse(item) : undefined;
+      },
+      setItem: (name, value) =>
+        localStorage.setItem(name, JSON.stringify(value)),
+      removeItem: (name) => localStorage.removeItem(name),
+    },
+  }
 );
 
 export default useStore;

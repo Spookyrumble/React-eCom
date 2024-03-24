@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 export const CartContainer = styled.div`
-  margin: 0 50px;
-  position: relative;
+  margin: 30px;
+  position: fixed;
+  right: 0;
+  top: 0;
   cursor: pointer;
+  z-index: 1000;
 `;
 
 export const CartCount = styled.div`

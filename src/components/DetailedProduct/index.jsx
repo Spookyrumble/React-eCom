@@ -3,6 +3,7 @@ import useApiFetch from "../../hooks/useApiFetch";
 import CalculatedPrice from "../Price";
 import StarRating from "../RatingStars";
 import * as S from "./index.styles";
+import { ReturnButton } from "../Global/index.styles";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import useStore from "../../hooks/useStore";
@@ -10,7 +11,17 @@ import useStore from "../../hooks/useStore";
 // eslint-disable-next-line react/prop-types
 const AddToCartBtn = ({ item }) => {
   const addToCart = useStore((state) => state.addToCart);
-  return <button onClick={() => addToCart(item)}>Add to Cart</button>;
+  const cart = useStore((state) => state.cart);
+  // eslint-disable-next-line react/prop-types
+  const isItemInCart = cart.some((cartItem) => cartItem.id === item.id);
+
+  const buttonClassName = isItemInCart ? "addedBtn" : "addBtn";
+
+  return (
+    <button className={buttonClassName} onClick={() => addToCart(item)}>
+      {isItemInCart ? "Add More" : "Add to cart"}
+    </button>
+  );
 };
 
 const DetailedProduct = () => {
@@ -27,30 +38,32 @@ const DetailedProduct = () => {
 
   return (
     <>
-      <div>
-        <img src={data.image.url} alt={data.image.alt} />
+      <S.ProductCard>
+        <S.ImgContainer>
+          <S.Img src={data.image.url} alt={data.image.alt} />
+        </S.ImgContainer>
         <h2>{data.title}</h2>
         <p>{data.description}</p>
         <CalculatedPrice
           price={data.price}
           discountedPrice={data.discountedPrice}
         />
-      </div>
+      </S.ProductCard>
       <AddToCartBtn item={data} />
-      <S.returnButton>
+      <ReturnButton>
         <IoArrowBackCircleOutline size={56} onClick={() => navigate(`/`)} />
-      </S.returnButton>
+      </ReturnButton>
       {data.reviews.length > 0 && (
-        <S.reviewContainer>
+        <S.ReviewContainer>
           <h3>Reviews</h3>
           {data.reviews.map((review) => (
-            <S.reviewCard key={review.id}>
+            <S.ReviewCard key={review.id}>
               <h4>By: {review.username}</h4>
               <p>{review.description}</p>
               <StarRating rating={review.rating} />
-            </S.reviewCard>
+            </S.ReviewCard>
           ))}
-        </S.reviewContainer>
+        </S.ReviewContainer>
       )}
       {data.reviews.length === 0 && <p>No reviews yet</p>}
     </>
