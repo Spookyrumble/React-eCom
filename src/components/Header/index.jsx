@@ -3,6 +3,7 @@ import SearchField from "../Search";
 import CartIcon from "../CartIcon";
 import Hamburger from "hamburger-react";
 import { useState } from "react";
+import * as S from "./index.styles";
 
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
@@ -18,6 +19,7 @@ const Header = () => {
       </button>
       <div className={isOpen ? "menu open" : "menu"}>
         <Nav />
+        <S.Logo />
         <SearchField />
       </div>
       <div>

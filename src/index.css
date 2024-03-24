@@ -127,7 +127,7 @@ header button {
 }
 
 /* Styles when menu is not open */
-@media (max-width: 768px) {
+@media (max-width: 838px) {
   header {
     display: flex;
     flex-direction: row;

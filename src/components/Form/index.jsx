@@ -101,9 +101,13 @@ const Form = () => {
           show={toggleDialog}
           message={"Thank you for contacting us. We will get back to you soon."}
         />
-        <button type="submit" onClick={handleSubmit} disabled={fullName === ""}>
+        <S.Button
+          type="submit"
+          onClick={handleSubmit}
+          disabled={fullName === ""}
+        >
           {fullName === "" ? "Please fill out form" : "Submit"}
-        </button>
+        </S.Button>
       </S.FormContainer>
     </>
   );

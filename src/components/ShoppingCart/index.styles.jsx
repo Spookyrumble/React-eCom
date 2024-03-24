@@ -14,6 +14,8 @@ export const CartContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
 `;
 
 export const CartItem = styled.div`
@@ -48,7 +50,7 @@ export const TrashCan = styled.div`
 `;
 export const Discount = styled.div`
   font-size: 1rem;
-  color: green;
+  color: lightgreen;
   margin-top: 2rem;
 `;
 export const SubTotal = styled.div`

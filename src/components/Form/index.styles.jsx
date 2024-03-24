@@ -18,6 +18,7 @@ export const FormContainer = styled.form`
   border: 1px solid #000;
   border-radius: 10px;
   padding: 1rem;
+  background-color: #1a1a1a;
 `;
 
 export const Label = styled.label`
@@ -43,4 +44,26 @@ export const TextArea = styled.textarea`
   background-color: #fff;
   color: #000;
   font-size: 1rem;
+`;
+
+export const Button = styled.button`
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background-color: cyan;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    background-color: #1a1a1a;
+    color: cyan;
+  }
+
+  &:disabled {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #fff;
+  }
 `;

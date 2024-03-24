@@ -14,9 +14,9 @@ color lightgrey;
 `;
 
 export const discountedPrice = styled.div`
-  color: green;
+  color: lightGreen;
 `;
 
 export const discount = styled.div`
-  color: green;
+  color: lightGreen;
 `;
