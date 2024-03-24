@@ -8,7 +8,7 @@ export const HeaderRight = styled.div`
 `;
 
 export const Logo = styled.div`
-  background-image: url("/public/37630330-8a42-4971-9b99-7d948b809ef9.png");
+  background-image: url("../../assets/37630330-8a42-4971-9b99-7d948b809ef9.png");
   background-size: contain;
   width: 200px;
   height: 40px;
