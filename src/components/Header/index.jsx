@@ -13,8 +13,6 @@ const Header = () => {
     setOpen(!isOpen);
   };
 
-  const logo = "../../assets/37630330-8a42-4971-9b99-7d948b809ef9.png";
-
   return (
     <header>
       <button onClick={toggleMenu}>
