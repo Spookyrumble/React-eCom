@@ -7,10 +7,17 @@ export const HeaderRight = styled.div`
   margin: auto;
 `;
 
+// export const Logo = styled.div`
+//   background-image: props => url(${props.src}
+//   background-size: contain;
+//   width: 200px;
+//   height: 40px;
+//   object-fit: cover;
+//   margin: 0 2rem;
+// `;
+
 export const Logo = styled.div`
-  background-image: src(
-    "../../assets/37630330-8a42-4971-9b99-7d948b809ef9.png"
-  );
+  background-image: url(${(props) => props.src});
   background-size: contain;
   width: 200px;
   height: 40px;
