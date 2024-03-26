@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -108,15 +108,21 @@ button:focus-visible {
   flex-direction: row;
   transition: all 0.3s ease;
   margin: auto;
+  padding-top: 2rem;
 }
 
-/* Hide burger menu button on larger screens */
 header button {
   display: none;
 }
 
-/* Styles when menu is not open */
 @media (max-width: 838px) {
+  body {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(36, 242, 232, 0.5)
+    );
+  }
+
   header {
     display: flex;
     flex-direction: row;

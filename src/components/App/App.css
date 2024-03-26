@@ -8,6 +8,9 @@ body {
   margin: 0;
   background-image: url("../../assets/4ddafe79-76dc-470a-9579-cd442dfc2325.jpg");
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
