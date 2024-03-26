@@ -8,11 +8,20 @@ const Card = () => {
   const { data, loading, error } = useApiFetch(`products`);
   const navigate = useNavigate();
 
+  const getErrorMessage = (error) => {
+    const statusCode = error?.response?.status;
+
+    if (statusCode === 502) {
+      return "Service is currently unavailable. Please try again later.";
+    }
+    return "An unexpected error occurred. Please try again.";
+  };
+
   return (
     <>
       <S.CardContainer>
         {loading && <p>Loading...</p>}
-        {error && <p>Error: {error}</p>}
+        {error && <p>Error: {getErrorMessage(error)}</p>}
         {data &&
           data.map((product) => (
             <S.Card
