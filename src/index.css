@@ -67,34 +67,23 @@ button:focus-visible {
 }
 
 .addBtn {
-  background-color: #646cff;
-  color: #ffffff;
+  background-color: orange;
+  color: black;
 }
 
 .addedBtn {
-  background-color: #535bf2;
-  color: #ffffff;
+  background-color: cyan;
+  color: #000;
 }
 
 .addBtn:hover {
-  background-color: #535bf2;
+  background-color: cyan;
+  color: #000;
 }
 
 .addedBtn:hover {
-  background-color: #646cff;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #ffffff;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  background-color: orange;
+  color: #000;
 }
 
 /* Default styles */
@@ -128,10 +117,6 @@ header button {
 
 /* Styles when menu is not open */
 @media (max-width: 838px) {
-  body {
-    background-size: scroll;
-  }
-
   header {
     display: flex;
     flex-direction: row;

@@ -6,6 +6,7 @@ export const ReviewContainer = styled.div`
   align-items: center;
   padding: 0px;
   margin: 100px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   border-radius: 25px;
 `;
@@ -13,8 +14,10 @@ export const ReviewContainer = styled.div`
 export const ProductCard = styled.div`
   backdrop-filter: blur(10px);
   border-radius: 25px;
-  margin: 20px;
+  margin: auto;
   padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  max-width: 600px;
 `;
 
 export const ReviewCard = styled.div`

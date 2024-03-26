@@ -60,27 +60,25 @@ const ShoppingCart = () => {
           {cart.length === 0 && <p>Your cart is empty</p>}
           {cart.map((item) => (
             <S.CartItem key={item.id}>
-              <div>
-                <S.CartThumbnail src={item.image.url} alt={item.image.alt} />
-              </div>
+              <S.CartThumbnail src={item.image.url} alt={item.image.alt} />
               <div>
                 <h3>{item.title}</h3>
-              </div>
-              <div>
-                {item.discountedPrice ? (
-                  <p>
-                    $ {item.discountedPrice}
-                    {calculateDiscountPercentage(
-                      item.price,
-                      item.discountedPrice
-                    )}
-                  </p>
-                ) : (
-                  <p>$ {item.price}</p>
-                )}
-              </div>
-              <div>
-                <p>Quantity: {item.quantity}</p>
+                <div>
+                  {item.discountedPrice ? (
+                    <p>
+                      $ {item.discountedPrice}
+                      {calculateDiscountPercentage(
+                        item.price,
+                        item.discountedPrice
+                      )}
+                    </p>
+                  ) : (
+                    <p>$ {item.price}</p>
+                  )}
+                </div>
+                <div>
+                  <p>Quantity: {item.quantity}</p>
+                </div>
               </div>
               <S.TrashCan>
                 <IoTrashBinOutline

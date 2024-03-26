@@ -14,6 +14,8 @@ export const CartContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   border-radius: 25px;
 `;
@@ -24,20 +26,18 @@ export const CartItem = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 2rem;
-  padding: 1rem;
   border-bottom: 1px solid #000;
 
   & h3,
   p,
   button {
-    margin: 0;
     text-align: left;
   }
 `;
 
 export const CartThumbnail = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
 `;
 
