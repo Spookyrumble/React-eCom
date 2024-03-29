@@ -78,22 +78,22 @@ const ShoppingCart = () => {
                     <p>$ {item.price}</p>
                   )}
                 </div>
-                <S.QuantityContainer>
-                  <p>Quantity: {item.quantity} </p>
-                </S.QuantityContainer>
               </div>
-              <S.AddBtn>
-                <IoIosAddCircleOutline
-                  size={24}
-                  onClick={() => increaseQuantity(item.id)}
-                />
-              </S.AddBtn>
-              <S.TrashCan>
-                <IoTrashBinOutline
-                  size={20}
-                  onClick={() => removeItem(item.id)}
-                />
-              </S.TrashCan>
+              <S.QuantityContainer>
+                <S.AddBtn>
+                  <IoIosAddCircleOutline
+                    size={24}
+                    onClick={() => increaseQuantity(item.id)}
+                  />
+                </S.AddBtn>
+                <p>{item.quantity} </p>
+                <S.TrashCan>
+                  <IoTrashBinOutline
+                    size={20}
+                    onClick={() => removeItem(item.id)}
+                  />
+                </S.TrashCan>
+              </S.QuantityContainer>
             </S.CartItem>
           ))}
           <S.Discount>Total Discount: $ {totalDiscount.toFixed(2)}</S.Discount>
