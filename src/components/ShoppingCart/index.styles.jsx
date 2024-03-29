@@ -27,6 +27,7 @@ export const CartItem = styled.div`
   align-items: center;
   gap: 2rem;
   border-bottom: 1px solid #000;
+  min-width: 300px;
 
   & h3,
   p,
@@ -43,7 +44,7 @@ export const CartThumbnail = styled.img`
 
 export const TrashCan = styled.div`
   cursor: pointer;
-  margin-top: 6px;
+
   & :hover {
     color: red;
   }
@@ -56,4 +57,22 @@ export const Discount = styled.div`
 export const SubTotal = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
+`;
+
+export const QuantityContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & p {
+    text-align: center;
+  }
+`;
+
+export const AddBtn = styled.div`
+  cursor: pointer;
+
+  & :hover {
+    color: lightGreen;
+  }
 `;

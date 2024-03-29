@@ -35,6 +35,12 @@ const useStore = create(
             return acc;
           }, []),
         })),
+      increaseQuantity: (itemId) =>
+        set((state) => ({
+          cart: state.cart.map((item) =>
+            item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
+          ),
+        })),
       clearCart: () => set(() => ({ cart: [] })),
     }),
     {

@@ -5,6 +5,7 @@ import DialogSuccess from "../dialogs/Success";
 import { useState } from "react";
 import { ReturnButton } from "../Global/index.styles";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
+import { IoIosAddCircleOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
 const ShoppingCart = () => {
@@ -17,6 +18,7 @@ const ShoppingCart = () => {
   const cart = useStore((state) => state.cart);
   const removeItem = useStore((state) => state.removeFromCart);
   const clearCart = useStore((state) => state.clearCart);
+  const increaseQuantity = useStore((state) => state.increaseQuantity);
 
   const handleCheckout = () => {
     clearCart();
@@ -76,10 +78,16 @@ const ShoppingCart = () => {
                     <p>$ {item.price}</p>
                   )}
                 </div>
-                <div>
-                  <p>Quantity: {item.quantity}</p>
-                </div>
+                <S.QuantityContainer>
+                  <p>Quantity: {item.quantity} </p>
+                </S.QuantityContainer>
               </div>
+              <S.AddBtn>
+                <IoIosAddCircleOutline
+                  size={24}
+                  onClick={() => increaseQuantity(item.id)}
+                />
+              </S.AddBtn>
               <S.TrashCan>
                 <IoTrashBinOutline
                   size={20}
