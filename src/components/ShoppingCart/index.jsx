@@ -1,11 +1,11 @@
 import * as S from "./index.styles";
 import useStore from "../../hooks/useStore";
-import { IoTrashBinOutline } from "react-icons/io5";
+import { GrSubtractCircle } from "react-icons/gr";
 import DialogSuccess from "../dialogs/Success";
 import { useState } from "react";
 import { ReturnButton } from "../Global/index.styles";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
-import { IoIosAddCircleOutline } from "react-icons/io";
+import { GrAddCircle } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 
 const ShoppingCart = () => {
@@ -80,19 +80,19 @@ const ShoppingCart = () => {
                 </div>
               </div>
               <S.QuantityContainer>
+                <S.TrashCan>
+                  <GrSubtractCircle
+                    size={24}
+                    onClick={() => removeItem(item.id)}
+                  />
+                </S.TrashCan>
+                <p>{item.quantity} </p>
                 <S.AddBtn>
-                  <IoIosAddCircleOutline
+                  <GrAddCircle
                     size={24}
                     onClick={() => increaseQuantity(item.id)}
                   />
                 </S.AddBtn>
-                <p>{item.quantity} </p>
-                <S.TrashCan>
-                  <IoTrashBinOutline
-                    size={20}
-                    onClick={() => removeItem(item.id)}
-                  />
-                </S.TrashCan>
               </S.QuantityContainer>
             </S.CartItem>
           ))}
