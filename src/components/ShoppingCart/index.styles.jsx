@@ -61,6 +61,7 @@ export const QuantityContainer = styled.div`
     background-color: #fff;
     color: #000;
     padding: 0 1rem;
+    margin: 0 5px;
     border-radius: 10px;
   }
 `;
