@@ -4,11 +4,11 @@ import Main from "../Main";
 
 const Layout = () => {
   return (
-    <div>
+    <>
       <Header />
       <Main />
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -96,11 +96,19 @@ const ShoppingCart = () => {
               </S.QuantityContainer>
             </S.CartItem>
           ))}
-          <S.Discount>Total Discount: $ {totalDiscount.toFixed(2)}</S.Discount>
-          <S.SubTotal>Subtotal: $ {subtotal.toFixed(2)}</S.SubTotal>
-          <button onClick={handleCheckout} disabled={cart.length === 0}>
+          <S.Discount hidden={cart.length === 0}>
+            Total Discount: $ {totalDiscount.toFixed(2)}
+          </S.Discount>
+          <S.SubTotal hidden={cart.length === 0}>
+            Subtotal: $ {subtotal.toFixed(2)}
+          </S.SubTotal>
+          <button onClick={handleCheckout} hidden={cart.length === 0}>
             {cart.length === 0 ? "No items in cart" : "Proceed to Checkout"}
           </button>
+          <S.ClearCart onClick={clearCart} hidden={cart.length === 0}>
+            {" "}
+            Clear Cart
+          </S.ClearCart>
         </S.CartContainer>
         <ReturnButton>
           <IoArrowBackCircleOutline size={56} onClick={() => navigate(`/`)} />
