@@ -27,6 +27,7 @@ export const CartItem = styled.div`
   align-items: center;
   gap: 2rem;
   border-bottom: 1px solid #000;
+  min-width: 300px;
 
   & h3,
   p,
@@ -41,13 +42,6 @@ export const CartThumbnail = styled.img`
   object-fit: cover;
 `;
 
-export const TrashCan = styled.div`
-  cursor: pointer;
-  margin-top: 6px;
-  & :hover {
-    color: red;
-  }
-`;
 export const Discount = styled.div`
   font-size: 1rem;
   color: lightgreen;
@@ -56,4 +50,36 @@ export const Discount = styled.div`
 export const SubTotal = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
+`;
+
+export const QuantityContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & p {
+    background-color: #fff;
+    color: #000;
+    padding: 0 1rem;
+    margin: 0 5px;
+    border-radius: 10px;
+  }
+`;
+
+export const AddBtn = styled.div`
+  cursor: pointer;
+  margin-top: 5px;
+
+  & :hover {
+    color: lightGreen;
+  }
+`;
+
+export const TrashCan = styled.div`
+  cursor: pointer;
+  margin-top: 5px;
+
+  & :hover {
+    color: red;
+  }
 `;

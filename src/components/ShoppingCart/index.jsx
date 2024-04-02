@@ -5,6 +5,7 @@ import DialogSuccess from "../dialogs/Success";
 import { useState } from "react";
 import { ReturnButton } from "../Global/index.styles";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
+import { IoIosAddCircleOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
 const ShoppingCart = () => {
@@ -17,6 +18,7 @@ const ShoppingCart = () => {
   const cart = useStore((state) => state.cart);
   const removeItem = useStore((state) => state.removeFromCart);
   const clearCart = useStore((state) => state.clearCart);
+  const increaseQuantity = useStore((state) => state.increaseQuantity);
 
   const handleCheckout = () => {
     clearCart();
@@ -76,16 +78,22 @@ const ShoppingCart = () => {
                     <p>$ {item.price}</p>
                   )}
                 </div>
-                <div>
-                  <p>Quantity: {item.quantity}</p>
-                </div>
               </div>
-              <S.TrashCan>
-                <IoTrashBinOutline
-                  size={20}
-                  onClick={() => removeItem(item.id)}
-                />
-              </S.TrashCan>
+              <S.QuantityContainer>
+                <S.AddBtn>
+                  <IoIosAddCircleOutline
+                    size={24}
+                    onClick={() => increaseQuantity(item.id)}
+                  />
+                </S.AddBtn>
+                <p>{item.quantity} </p>
+                <S.TrashCan>
+                  <IoTrashBinOutline
+                    size={20}
+                    onClick={() => removeItem(item.id)}
+                  />
+                </S.TrashCan>
+              </S.QuantityContainer>
             </S.CartItem>
           ))}
           <S.Discount>Total Discount: $ {totalDiscount.toFixed(2)}</S.Discount>

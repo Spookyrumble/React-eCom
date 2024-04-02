@@ -41,7 +41,10 @@ export const CardPrice = styled.div`
   display: inline-block;
   flex-direction: row;
   font-size: 1rem;
-  color: #000;
+  color: #fff;
+  background-color: #000;
+  padding: 5px 10px;
+  border-radius: 10px;
 `;
 
 export const ProductRating = styled.div`
