@@ -125,9 +125,15 @@ header button {
   }
 
   header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
   }
 
   .menu {
@@ -162,8 +168,7 @@ header button {
     z-index: 999;
     display: block; /* Show burger menu button */
     background-color: unset;
-    border: unset;
-    margin: 6px;
+    margin: 0px;
     & :hover {
       background-color: unset;
     }

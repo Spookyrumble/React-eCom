@@ -1,11 +1,11 @@
 import * as S from "./index.styles";
 import useStore from "../../hooks/useStore";
-import { IoTrashBinOutline } from "react-icons/io5";
+import { GrSubtractCircle } from "react-icons/gr";
 import DialogSuccess from "../dialogs/Success";
 import { useState } from "react";
 import { ReturnButton } from "../Global/index.styles";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
-import { IoIosAddCircleOutline } from "react-icons/io";
+import { GrAddCircle } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 
 const ShoppingCart = () => {
@@ -80,27 +80,35 @@ const ShoppingCart = () => {
                 </div>
               </div>
               <S.QuantityContainer>
+                <S.TrashCan>
+                  <GrSubtractCircle
+                    size={24}
+                    onClick={() => removeItem(item.id)}
+                  />
+                </S.TrashCan>
+                <p>{item.quantity} </p>
                 <S.AddBtn>
-                  <IoIosAddCircleOutline
+                  <GrAddCircle
                     size={24}
                     onClick={() => increaseQuantity(item.id)}
                   />
                 </S.AddBtn>
-                <p>{item.quantity} </p>
-                <S.TrashCan>
-                  <IoTrashBinOutline
-                    size={20}
-                    onClick={() => removeItem(item.id)}
-                  />
-                </S.TrashCan>
               </S.QuantityContainer>
             </S.CartItem>
           ))}
-          <S.Discount>Total Discount: $ {totalDiscount.toFixed(2)}</S.Discount>
-          <S.SubTotal>Subtotal: $ {subtotal.toFixed(2)}</S.SubTotal>
-          <button onClick={handleCheckout} disabled={cart.length === 0}>
+          <S.Discount hidden={cart.length === 0}>
+            Total Discount: $ {totalDiscount.toFixed(2)}
+          </S.Discount>
+          <S.SubTotal hidden={cart.length === 0}>
+            Subtotal: $ {subtotal.toFixed(2)}
+          </S.SubTotal>
+          <button onClick={handleCheckout} hidden={cart.length === 0}>
             {cart.length === 0 ? "No items in cart" : "Proceed to Checkout"}
           </button>
+          <S.ClearCart onClick={clearCart} hidden={cart.length === 0}>
+            {" "}
+            Clear Cart
+          </S.ClearCart>
         </S.CartContainer>
         <ReturnButton>
           <IoArrowBackCircleOutline size={56} onClick={() => navigate(`/`)} />

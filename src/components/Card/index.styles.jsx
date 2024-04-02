@@ -39,7 +39,6 @@ export const CardTitle = styled.h2`
 
 export const CardPrice = styled.div`
   display: inline-block;
-  flex-direction: row;
   font-size: 1rem;
   color: #fff;
   background-color: #000;

@@ -1,5 +1,6 @@
 import * as S from "./index.styles";
 
+// eslint-disable-next-line react/prop-types
 const CalculatedPrice = ({ price, discountedPrice }) => {
   if (!price || !discountedPrice || price <= discountedPrice) {
     return <span>{`$ ${price}`}</span>;

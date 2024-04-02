@@ -34,6 +34,16 @@ export const CartItem = styled.div`
   button {
     text-align: left;
   }
+
+  @media (max-width: 540px) {
+    flex-direction: column;
+
+    & h3,
+    p,
+    button {
+      text-align: center;
+    }
+  }
 `;
 
 export const CartThumbnail = styled.img`
@@ -43,13 +53,14 @@ export const CartThumbnail = styled.img`
 `;
 
 export const Discount = styled.div`
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: lightgreen;
   margin-top: 2rem;
 `;
 export const SubTotal = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
+  text-decoration: underline;
 `;
 
 export const QuantityContainer = styled.div`
@@ -82,4 +93,12 @@ export const TrashCan = styled.div`
   & :hover {
     color: red;
   }
+`;
+
+export const ClearCart = styled.button`
+  cursor: pointer;
+  font-size: 1rem;
+  color: white;
+  margin: auto;
+  text-align: right;
 `;

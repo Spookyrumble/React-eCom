@@ -6,6 +6,11 @@ export const priceContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
+
+  @media (max-width: 540px) {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
 `;
 
 export const price = styled.div`
@@ -14,6 +19,7 @@ color lightgrey;
 `;
 
 export const discountedPrice = styled.div`
+  font-size: 1.25rem;
   color: lightGreen;
 `;
 
