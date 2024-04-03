@@ -20,9 +20,12 @@ const Header = () => {
       </button>
       <div className={isOpen ? "menu open" : "menu"}>
         <Nav />
-        <S.Logo src={Logo} />
+
         <SearchField />
       </div>
+      <S.Logo>
+        <img className={"logoPosition"} src={Logo} alt="Shop name" />
+      </S.Logo>
       <div>
         <CartIcon />
       </div>
