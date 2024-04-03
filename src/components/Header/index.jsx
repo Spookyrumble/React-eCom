@@ -5,8 +5,10 @@ import Hamburger from "hamburger-react";
 import { useState } from "react";
 import * as S from "./index.styles";
 import Logo from "../../assets/cyber_logo.svg";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [isOpen, setOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -22,7 +24,7 @@ const Header = () => {
         <Nav />
         <SearchField />
       </div>
-      <S.Logo>
+      <S.Logo onClick={() => navigate(`/`)}>
         <img className={"logoPosition"} src={Logo} alt="Shop name" />
       </S.Logo>
       <div>

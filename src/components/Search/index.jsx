@@ -62,6 +62,7 @@ function SearchField() {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Search..."
+        aria-label="Search Field"
       />
       {value && <S.SearchList>{renderFilteredProducts()}</S.SearchList>}
       <S.IconWrapper>
