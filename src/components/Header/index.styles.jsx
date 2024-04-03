@@ -6,4 +6,8 @@ export const Logo = styled.div`
   object-fit: cover;
   position: fixed;
   width: 100%;
+
+  & :hover {
+    cursor: pointer;
+  }
 `;
