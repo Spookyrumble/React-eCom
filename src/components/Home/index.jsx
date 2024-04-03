@@ -5,7 +5,7 @@ function Home() {
   return (
     <>
       <S.HomeContainer>
-        <h1>Welcome to Our Online Shop</h1>
+        <h1>Welcome to Cyberstore</h1>
       </S.HomeContainer>
       <S.HomeContainer>
         <Card />

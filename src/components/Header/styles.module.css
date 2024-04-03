@@ -1,7 +1,6 @@
-/* Default styles */
-.menu {
+/* Default styles .menu {
   display: flex;
-  flex-direction: row; /* Adjust based on your design */
+  flex-direction: row; 
   transition: all 0.3s ease;
 }
 
@@ -9,24 +8,37 @@
   display: flex;
 }
 
-/* Styles when menu is not open */
 @media (max-width: 768px) {
-  /* Adjust breakpoint as needed */
   .menu {
     display: none;
   }
 
   .menu.open {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column; 
   }
 
   header button {
-    display: block; /* Show burger menu button */
+    display: block; 
   }
 }
 
-/* Hide burger menu button on larger screens */
 header button {
   display: none;
+} */
+
+.logoLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logoCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }

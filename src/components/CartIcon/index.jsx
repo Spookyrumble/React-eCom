@@ -19,7 +19,7 @@ const CartIcon = () => {
 
   return (
     <S.CartContainer onClick={handleCartClick}>
-      <FaShoppingCart size={24} />
+      <FaShoppingCart size={30} />
       {totalQuantity > 0 && <S.CartCount>{totalQuantity}</S.CartCount>}
     </S.CartContainer>
   );

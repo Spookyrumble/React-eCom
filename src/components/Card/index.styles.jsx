@@ -47,10 +47,20 @@ export const CardPrice = styled.div`
 `;
 
 export const ProductRating = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: left;
   font-size: 1.5rem;
   color: purple;
   margin: 10px 10px;
   display: flex;
   align-items: center;
   justify-content: left;
+
+  & p {
+    font-size: 1rem;
+    color: #000;
+    line-height: 1;
+    margin-bottom: 0;
+  }
 `;
