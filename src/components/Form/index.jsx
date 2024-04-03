@@ -7,6 +7,20 @@ const Form = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!fullName.trim())
+      newErrors.fullName = "Name must be 3 characters or more";
+    if (!email.trim() || !/\S+@\S+\.\S+/.test(email))
+      newErrors.email = "Valid email is required";
+    if (!subject.trim())
+      newErrors.subject = "Subject must be 3 characters or more";
+    if (!message.trim()) newErrors.message = "Message is required";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   function onFormSubmit(event) {
     event.preventDefault();
@@ -21,16 +35,25 @@ const Form = () => {
   }
 
   function onInputChange(event) {
-    const value = event.target.value;
+    const { name, value } = event.target;
 
-    if (event.target.name === "name") {
-      setFullName(value);
-    } else if (event.target.name === "email") {
-      setEmail(value);
-    } else if (event.target.name === "subject") {
-      setSubject(value);
-    } else if (event.target.name === "message") {
-      setMessage(value);
+    setErrors({ ...errors, [name]: "" });
+
+    switch (name) {
+      case "name":
+        setFullName(value);
+        break;
+      case "email":
+        setEmail(value);
+        break;
+      case "subject":
+        setSubject(value);
+        break;
+      case "message":
+        setMessage(value);
+        break;
+      default:
+        break;
     }
   }
 
@@ -44,9 +67,13 @@ const Form = () => {
     setEmail("");
     setSubject("");
     setMessage("");
+    setErrors({});
   };
 
   const handleSubmit = () => {
+    if (!validateForm()) {
+      return;
+    }
     toggleDialog(true);
     clearForm();
   };
@@ -66,7 +93,11 @@ const Form = () => {
           required
           minLength={3}
           onChange={onInputChange}
+          className={errors.fullName ? "error" : ""}
         />
+        {errors.fullName && (
+          <S.ErrorMessage> {errors.fullName} </S.ErrorMessage>
+        )}
         <S.Label htmlFor="email">Email</S.Label>
         <S.Input
           type="email"
