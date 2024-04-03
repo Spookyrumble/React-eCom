@@ -37,6 +37,7 @@ const Card = () => {
                 />
               </S.CardPrice>
               <S.ProductRating>
+                <p>Product rating</p>
                 <RatingStars rating={product.rating} />
               </S.ProductRating>
             </S.Card>

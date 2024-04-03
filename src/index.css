@@ -18,7 +18,7 @@
 .logoPosition {
   position: fixed;
   height: 50px;
-  width: 250px;
+  max-width: 220px;
   top: 12px;
   left: 10px;
   transition: all 0.3s ease;

@@ -4,7 +4,7 @@ import CartIcon from "../CartIcon";
 import Hamburger from "hamburger-react";
 import { useState } from "react";
 import * as S from "./index.styles";
-import Logo from "../../assets/37630330-8a42-4971-9b99-7d948b809ef9.png";
+import Logo from "../../assets/cyber_logo.svg";
 
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
@@ -20,7 +20,6 @@ const Header = () => {
       </button>
       <div className={isOpen ? "menu open" : "menu"}>
         <Nav />
-
         <SearchField />
       </div>
       <S.Logo>
