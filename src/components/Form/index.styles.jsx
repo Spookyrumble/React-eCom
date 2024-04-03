@@ -33,6 +33,10 @@ export const Input = styled.input`
   background-color: #fff;
   color: #000;
   font-size: 1rem;
+
+  &.error {
+    border: 1px solid red;
+  }
 `;
 
 export const TextArea = styled.textarea`
@@ -66,4 +70,10 @@ export const Button = styled.button`
     color: #fff;
     border: 1px solid #fff;
   }
+`;
+
+export const ErrorMessage = styled.span`
+  color: red;
+  font-size: 0.75rem;
+  margin: 0;
 `;
