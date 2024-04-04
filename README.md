@@ -30,7 +30,6 @@ To get a local copy up and running, follow these simple steps.
 - Responsive design that adapts to various screen sizes.
 - Dynamic product gallery.
 - Cart functionality with real-time updates.
-- Secure checkout process.
 
 ### Author
 
