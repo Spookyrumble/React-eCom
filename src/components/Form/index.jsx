@@ -1,7 +1,6 @@
 import { useState } from "react";
 import * as S from "./index.styles";
 import DialogSuccess from "../dialogs/Success";
-import { CiCircleCheck } from "react-icons/ci";
 
 const Form = () => {
   const [fullName, setFullName] = useState("");
