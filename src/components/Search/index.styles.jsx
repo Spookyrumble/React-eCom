@@ -12,6 +12,12 @@ export const SearchInput = styled.input`
   border-radius: 5px;
 `;
 
+export const SearchThumbnail = styled.img`
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+`;
+
 export const IconWrapper = styled.div`
   position: absolute;
   top: 50%;
@@ -37,6 +43,9 @@ export const SearchList = styled.ul`
 
   & li {
     cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
 
     &:hover {
       background-color: white;

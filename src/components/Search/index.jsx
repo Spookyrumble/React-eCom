@@ -42,7 +42,7 @@ function SearchField() {
     const filteredProducts = getFilteredProducts();
     return filteredProducts.map((product) => (
       <li key={product.id} onClick={() => handleItemClick(product.id)}>
-        {product.title}
+        <S.SearchThumbnail src={product.image.url} alt="" /> {product.title}
       </li>
     ));
   };
