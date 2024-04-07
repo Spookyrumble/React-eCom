@@ -13,8 +13,8 @@ export const SearchInput = styled.input`
 `;
 
 export const SearchThumbnail = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 48px;
+  height: 48px;
   margin-right: 10px;
 `;
 
