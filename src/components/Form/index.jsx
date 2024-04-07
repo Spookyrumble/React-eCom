@@ -24,6 +24,9 @@ const Form = () => {
 
   function onFormSubmit(event) {
     event.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
 
     const body = {
       fullName,
@@ -71,9 +74,6 @@ const Form = () => {
   };
 
   const handleSubmit = () => {
-    if (!validateForm()) {
-      return;
-    }
     toggleDialog(true);
     clearForm();
   };
@@ -134,7 +134,7 @@ const Form = () => {
         />
         <S.Button
           type="submit"
-          onClick={handleSubmit}
+          // onClick={handleSubmit}
           disabled={fullName === ""}
         >
           {fullName === "" ? "Please fill out form" : "Submit"}
