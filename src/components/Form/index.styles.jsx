@@ -35,19 +35,33 @@ export const Input = styled.input`
   font-size: 1rem;
 
   &.error {
-    border: 1px solid red;
+    border-left: 4px solid red;
+    background-color: lightYellow;
+  }
+
+  &.success {
+    border-left: 4px solid green;
   }
 `;
 
 export const TextArea = styled.textarea`
   padding: 0.5rem;
-  margin: 0.5rem 0;
+  margin-bottom: 1rem;
   border-radius: 5px;
   border: 1px solid #000;
   font-family: "Arial", sans-serif;
   background-color: #fff;
   color: #000;
   font-size: 1rem;
+
+  &.error {
+    border-left: 4px solid red;
+    background-color: lightYellow;
+  }
+
+  &.success {
+    border-left: 4px solid green;
+  }
 `;
 
 export const Button = styled.button`
@@ -72,8 +86,13 @@ export const Button = styled.button`
   }
 `;
 
+export const CorrectMessage = styled.span`
+  border-left: 4px solid green;
+`;
+
 export const ErrorMessage = styled.span`
-  color: red;
+  color: white;
   font-size: 0.75rem;
-  margin: 0;
+  margin-top: -15px;
+  text-align: center;
 `;

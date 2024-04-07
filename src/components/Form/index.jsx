@@ -1,6 +1,7 @@
 import { useState } from "react";
 import * as S from "./index.styles";
 import DialogSuccess from "../dialogs/Success";
+import { CiCircleCheck } from "react-icons/ci";
 
 const Form = () => {
   const [fullName, setFullName] = useState("");
@@ -11,20 +12,28 @@ const Form = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!fullName.trim())
-      newErrors.fullName = "Name must be 3 characters or more";
+    if (!fullName.trim() || fullName.trim().length < 2)
+      newErrors.name = "Name must be 3 characters or more";
     if (!email.trim() || !/\S+@\S+\.\S+/.test(email))
       newErrors.email = "Valid email is required";
-    if (!subject.trim())
+    if (!subject.trim() || subject.trim().length < 2)
       newErrors.subject = "Subject must be 3 characters or more";
-    if (!message.trim()) newErrors.message = "Message is required";
+    if (!message.trim() || message.trim().length < 2)
+      newErrors.message = "Message must be 3 characters or more";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
+  const handleSubmit = () => {
+    toggleDialog(true);
+    clearForm();
+  };
+
   function onFormSubmit(event) {
     event.preventDefault();
+
     if (!validateForm()) {
+      console.log("Form errors exist. Cannot submit.");
       return;
     }
 
@@ -35,13 +44,17 @@ const Form = () => {
       message,
     };
     console.log(body);
+    handleSubmit();
   }
 
   function onInputChange(event) {
     const { name, value } = event.target;
 
-    setErrors({ ...errors, [name]: "" });
+    let stateName = name;
+    if (name === "name") stateName = "fullName";
 
+    setErrors({ ...errors, [stateName]: "" });
+    validateForm();
     switch (name) {
       case "name":
         setFullName(value);
@@ -73,11 +86,6 @@ const Form = () => {
     setErrors({});
   };
 
-  const handleSubmit = () => {
-    toggleDialog(true);
-    clearForm();
-  };
-
   return (
     <>
       <S.InfoContainer>
@@ -93,11 +101,9 @@ const Form = () => {
           required
           minLength={3}
           onChange={onInputChange}
-          className={errors.fullName ? "error" : ""}
+          className={errors.name ? "error" : "success"}
         />
-        {errors.fullName && (
-          <S.ErrorMessage> {errors.fullName} </S.ErrorMessage>
-        )}
+        {errors.name && <S.ErrorMessage> {errors.name} </S.ErrorMessage>}
         <S.Label htmlFor="email">Email</S.Label>
         <S.Input
           type="email"
@@ -106,7 +112,9 @@ const Form = () => {
           value={email}
           required
           onChange={onInputChange}
+          className={errors.email ? "error" : "success"}
         />
+        {errors.email && <S.ErrorMessage> {errors.email} </S.ErrorMessage>}
         <S.Label htmlFor="subject">Subject</S.Label>
         <S.Input
           type="text"
@@ -116,7 +124,9 @@ const Form = () => {
           required
           minLength={3}
           onChange={onInputChange}
+          className={errors.subject ? "error" : "success"}
         />
+        {errors.subject && <S.ErrorMessage> {errors.subject} </S.ErrorMessage>}
         <S.Label htmlFor="message">Message</S.Label>
         <S.TextArea
           id="message"
@@ -126,7 +136,9 @@ const Form = () => {
           minLength={3}
           rows={5}
           onChange={onInputChange}
+          className={errors.message ? "error" : "success"}
         />
+        {errors.message && <S.ErrorMessage> {errors.message} </S.ErrorMessage>}
         <DialogSuccess
           hidden={isDialogHidden}
           show={toggleDialog}
@@ -134,7 +146,7 @@ const Form = () => {
         />
         <S.Button
           type="submit"
-          // onClick={handleSubmit}
+          onClick={onFormSubmit}
           disabled={fullName === ""}
         >
           {fullName === "" ? "Please fill out form" : "Submit"}
