@@ -40,6 +40,9 @@ export const SearchList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+  max-height: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
 
   & li {
     cursor: pointer;
