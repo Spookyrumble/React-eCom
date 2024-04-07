@@ -19,8 +19,13 @@ export const Card = styled.div`
     box-shadow: 0px 0px 10px 0 black;
     scale: 0.98;
     transition: all 0.3s ease-in-out;
-    filter: grayscale(1);
-  }
+    
+    & img {
+      filter: grayscale(1);
+      transition: all 1s ease-in-out;
+      scale: 1;
+      aspect-ratio: 1;
+        }
 `;
 
 export const CardImage = styled.img`
@@ -30,6 +35,7 @@ export const CardImage = styled.img`
   object-position: center;
   margin-bottom: 10px;
   loading: lazy;
+  scale: 0.95;
 `;
 
 export const CardTitle = styled.h2`
